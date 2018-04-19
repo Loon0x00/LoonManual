@@ -2,6 +2,9 @@
 Loon app manual
 
 # 概述
+**[下载地址](https://itunes.apple.com/in/app/id1373567447)**
+**[Twitter](https://twitter.com/loon0x00)**
+
 Loon 是一个iOS网络代理工具，目前支持ss代理。
 **IMPORT：Loon不提供具体的代理服务器地址，需自行搭建或者购买服务器。**
 
