@@ -1,106 +1,81 @@
 # LoonManual
 Loon app manual
+Last update: 2019-11-04
+Loon version: 1.2.3(80)
 
 # 概述
 **[下载地址](https://itunes.apple.com/in/app/id1373567447)**
 **[Twitter](https://twitter.com/loon0x00)**
 
-Loon 是一个iOS网络代理工具，目前支持ss代理。
-**IMPORT：Loon不提供具体的代理服务器地址，需自行搭建或者购买服务器。**
+Loon 是一个iOS网络代理工具，目前支持ss,ssr代理。
+**IMPORTANT：Loon不提供具体的代理服务器地址，需自行搭建或者购买服务器。**
 
-# 特性
-* 自定义代理规则
-* 简单的HTTP数据抓取
-* 流量统计
-* 支持IPV4/IPV6
-* 支持ShadowSocks
+# 概念
+###节点（Node）
+一个节点代表一个代理服务器，代理服务器可以实现流量的中转。
+###订阅节点（Subscription Node）
+订阅节点是许多节点的集合，是一个配置在远端的节点集合，Loon通过url下载下来后解析成一个节点列表。
+###策略组（Policy Group）
+一个策略组分为两部部分：策略类型，子策略。策略组会根据策略类型选出流量最终使用的节点
+Loon目前支持三种策略：
+1. **select** 根据用户UI选择使用哪个节点
+2. **url-test** 默认每隔600s向配置的url发出http请求，选择最快返回数据的节点（注：url-test不支持策略组为其子策略）
+3. **ssid**，根据配置的ssid名字，在wifi切换时自动切换节点，也可以配置默认节点和在蜂窝数据下使用的节点
 
-# 配置文件
-Loon自带一个默认的配置文件，默认配置文件自带一个Direct的无服务器节点，点击代理tab页面的default进入当前配置页面。
-
-<div align=center><img width="310" height="552" src="https://github.com/Loon0x00/LoonManual/blob/master/Resource/Images/IMG_2088.PNG?raw=true"/></div>
-
-当前配置页面显示了该配置下的所有代理节点，前面有绿色原点的表示当前应用的代理节点。
-
-<div align=center><img width="310" height="552" src="https://github.com/Loon0x00/LoonManual/blob/master/Resource/Images/IMG_2089.PNG?raw=true"/></div>
-
-点击当前配置文件条目进入全部配置文件列表，点击右上角的+可以添加配置文件，目前支持复制当前配置文件和复制默认配置文件，每个配置文件都可以进行单独的编辑。
-
-## 具体配置和规则
-具体配置包括配置代理服务器和配置匹配规则。
-
-<div align=center><img width="310" height="552" src="https://github.com/Loon0x00/LoonManual/blob/master/Resource/Images/IMG_2091.PNG?raw=true"/></div>
-
-### 配置代理服务器
-Loon目前只支持Direct和ShadowSocket两种代理服务器，Direct表示所有流量不经过中间代理服务器，直接转发到目标服务器，ShadowSocket表示流量会去往支持ShadowSocket的代理服务器。
-### 配置匹配规则
-
-<div align=center><img width="310" height="552" src="https://github.com/Loon0x00/LoonManual/blob/master/Resource/Images/IMG_2092.PNG?raw=true"/></div>
-
-Loon会根据匹配规则中的转发策略对每一个请求进行不同的处理，目前的匹配类型有以下几种：
-
+一个策略组可以包含任何单个节点，订阅节点，策略组（url-test不除外），内置策略（DIRECT，REJECT）
+###规则（Rule）
+规则决定了一个请求所使用的的策略。
+规则分为三部分：规则类型，匹配关键字，策略名称
+例如：`DOMAIN-SUFFIX,twimg.com,PROXY`
+##### 规则类型
+目前Loon支持6种匹配类型
 1. **DOMAIN-SUFFIX 基于域名后缀**进行判断
 2. **DOMAIN 基于域名**进行判断
 3. **DOMAIN-KEYWORD 基于域名关键词**进行判断
 4. **IP-CIDR 局域网匹配**
 5. **FINAL 默认策略**
-	
-Loon包含三种策略：
+6. **User-Agent** 根据Http的user-agent值来进行匹配，支持带有*，？的通配符匹配
 
-1. Direct 流量直接转发到目标服务器
-2. Proxy 流量转发到代理服务器
-3. Reject 拒绝流量访问
+特殊规则类型 **Final**
+表示如果没有匹配的规则，默认使用的策略
+##### 规则策略名称
+可以使用节点名称、订阅节点名称以及策略组名称
 
-匹配内容表示匹配的关键词、域名、局域网等
-	
-	#基于域名后缀判断是否匹配，匹配走远端代理服务器，进行远端dns解析
-	DOMAIN-SUFFIX,twimg.com,PROXY,force-remote-dns
-	#判断是否是局域网，是走代理，不需要进行dns解析
-	IP-CIDR,91.108.56.0/22,PROXY,no-resolve
+###URL Rewrite
+在收到http请求时，Loon会使用请求的url去寻找匹配的url rewrite，一个URL Rewrite会根据匹配的规则替换或者修改HTTP请求中的url，或者替换请求响应体。
+一个URL Rewrite分为三部分：正则表达式，替换内容，rewrite类型
+例如：`https?://(www.)?g.cn https://www.google.com 302`
+目前Loon支持4种类型URL Rewrite 类型：
+1. **header** 请求头中匹配的host字段将会被替换内容所替换
+2. **reject** 直接拒绝请求
+3. **302** 返回302响应
+4. **307** 返回307响应
 
-### 文本编辑配置
-配置文本主要包括Proxy和Rule两部分：
+###DNS
+通过自定义DNS来快速、正确的获取Domain的IP。Loon 会根据你设置的DNS并发请求，使用响应最快的结果，并且使用LRU缓存最近的100个结果。
 
-<div align=center><img width="310" height="552" src="https://github.com/Loon0x00/LoonManual/blob/master/Resource/Images/IMG_2093.PNG?raw=true"/></div>
+###MITM （Main in the Middle Attack）
+中间人攻击方式解密https的请求。Loon会根据配置的hostname和信任的CA证书解密相应的https请求和响应，解密后可以配合Rule和URL Rewrite进行分流。
 
-1、[Proxy]指定代理方法、服务器、密码
-
-	[Proxy]
-	🌍 Direct = Direct
-	🇺🇸 US = ShadowSocks,45.56.67.78,443,rc4-md5,password
-	
-从左至右依次是名称、代理协议、代理服务器地址、加密方式、密码
-
-2、[Rule]指定域名或IP地址对应的代理模式
-
-	[Rule]
-	#Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,IP-CIDR
-	#域名匹配规则:域名后缀匹配,全部域名匹配,域名关键字匹配,IP地址CIDR匹配
-	
-	#Strategy:DIRECT,Proxy,REJECT
-	#代理策略:直接连接,走代理,拒绝连接
-	
-	#Options:force-remote-dns(Default:false),no-resolve
-	#其他选项:强制远端DNS,不进行DNS解析
-	
-	DOMAIN-KEYWORD,google,PROXY,force-remote-dns
-	DOMAIN-SUFFIX,twimg.com,PROXY,force-remote-dns
-	DOMAIN-SUFFIX,google.cn,DIRECT
-	IP-CIDR,91.108.56.0/22,PROXY,no-resolve
-	
-	FINAL,PROXY
-	#FINAL表示默认的代理策略
-
-一般情况下Loon自带的配置文件已经足够使用，如若需要添加代理规则可以在最近请求中查看请求host，然后根据host添加规则。
-
-# HTTP数据包抓取
-Loon目前仅支持基本的HTTP Header数据包抓取，后续body和HTTPS数据包的抓取正在开发中。
-<div align=center><img width="310" height="552" src="https://github.com/Loon0x00/LoonManual/blob/master/Resource/Images/IMG_2094.PNG?raw=true"/></div>
+#使用方式
+###添加单个节点
+Loon目前支持三种方式添加单个节点：手动输入配置、粘贴uri、扫描二维码。
+进入Profile->Single Node-> +  可进行相关节点配置
+###添加订阅节点
+目前支持ssip02格式的ss uri，ssr官方订阅格式的节点订阅，由于某些订阅节点被墙，需要翻墙后进行下载，目前Loon会过滤掉port小于3的节点作为订阅机场的信息展示节点。
+添加订阅的UI操作：Profile->Subscription Node-> +
+###添加策略组
+**当添加完节点、订阅节点之后需要配置策略组才可以正常使用**，进入Profile->Policy Group-> + 进入添加Group页面后根据需要进行新建策略组，相关选项请参考上文中的策略组的概念。
+###使用策略组
+在App 首页有一个Strategy模块，点击进入后会展示配置的策略组，可以选择select类型策略组所使用的的节点，也可以展开策略组进行Delay延迟测试。
 
 # 常见问题
 **Q**: 配置文件已经设置完成，vpn也开启为什么无法连接外网？
 
 A: 查看你的配置的代理服务器ip是否正确；在手机设置中查看Loon的**WLAN与蜂窝移动网**是否勾上。
+
+**Q**:添加订阅后无法看见订阅节点，选择节点
+A:  添加完订阅并下载节点成功后会进入到节点列表页，此处无法选择节点，需要将订阅节点组合策略组使用
 
 **Q**: 如何填写配置中的代理服务器？
 
