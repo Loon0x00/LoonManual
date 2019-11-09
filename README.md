@@ -57,7 +57,7 @@ Loon目前支持三种策略：
 ### MITM （Main in the Middle Attack）
 中间人攻击方式解密https的请求。Loon会根据配置的hostname和信任的CA证书解密相应的https请求和响应，解密后可以配合Rule和URL Rewrite进行分流。
 
-#使用方式
+# 使用方式
 ### 添加单个节点
 Loon目前支持三种方式添加单个节点：手动输入配置、粘贴uri、扫描二维码。
 进入Profile->Single Node-> +  可进行相关节点配置
