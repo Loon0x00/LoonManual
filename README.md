@@ -54,7 +54,7 @@ Loon目前支持三种策略：
 ### DNS
 通过自定义DNS来快速、正确的获取Domain的IP。Loon 会根据你设置的DNS并发请求，使用响应最快的结果，并且使用LRU缓存最近的100个结果。
 
-### MITM （Main in the Middle Attack）
+### MITM （Man in the Middle Attack）
 中间人攻击方式解密https的请求。Loon会根据配置的hostname和信任的CA证书解密相应的https请求和响应，解密后可以配合Rule和URL Rewrite进行分流。
 
 # 使用方式
