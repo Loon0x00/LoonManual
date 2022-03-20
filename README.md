@@ -4,8 +4,9 @@ Last update: 2019-11-04
 Loon version: 1.2.3(80)
 
 # 概述
-**[下载地址](https://itunes.apple.com/in/app/id1373567447)**
-**[Twitter](https://twitter.com/loon0x00)**
+- **[下载地址](https://itunes.apple.com/in/app/id1373567447)**
+- **[配置文档](https://github.com/Loon0x00/LoonExampleConfig)**
+- **[Twitter](https://twitter.com/loon0x00)**
 
 Loon 是一个iOS网络代理工具，目前支持ss,ssr代理。
 **IMPORTANT：Loon不提供具体的代理服务器地址，需自行搭建或者购买服务器。**
