@@ -1,4 +1,5 @@
 # DNS
+
 Loon（截止Build 427）支持四种DNS查询，
 - 标准UDP查询
 - DNS-over-HTTPS
@@ -20,7 +21,7 @@ doh3-server = https://example.com/dns-query
 ```
 
 ## DNS查询逻辑
-Loon会将所有DNS查询分为两类，第一类是常规DNS查询，第二类是加密DNS查询（DoH/DoQ/DoH3），在同时配置了加密DNS和常规DNS服务器时，只会进行加密DNS查询，会并发向所有有效的DNS服务器发起查询，使用响应最快的查询结果。
+Loon将所有DNS查询分为两类，第一类是常规DNS查询，第二类是加密DNS查询（DoH/DoQ/DoH3），在同时配置了加密DNS和常规DNS服务器时，只会进行加密DNS查询，会并发向所有有效的DNS服务器发起查询，使用响应最快的查询结果。
 
 ## DNS缓存
 Loon设计了两种DNS缓存，第一种是内存缓存，采用LRU算法缓存100条数据（iOS15后增加到200），在Loon启动过程中有效，关闭后缓存全部清除；第二种是磁盘缓存，根据TTL是否过期进行自动删除。同时允许关闭磁盘缓存逻辑。
