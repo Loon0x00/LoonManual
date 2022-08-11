@@ -126,7 +126,7 @@ $notification.post("title","subtitle","content",attach)
         Content-Type:"application/json"
     },
     body:"{}",//仅仅在post请求中有效
-    node:"HK - v1.0",//指定该请求使用哪一个节点或者策略组
+    node:"HK - v1.0",//指定该请求使用哪一个节点或者策略组（可以使节点名称、策略组名称，也可以说是一个Loon格式的节点描述，如：node:"shadowsocksr,example.com,1070,chacha20-ietf,"password",protocol=auth_aes128_sha1,protocol-param=test,obfs=plain,obfs-param=edge.microsoft.com"）
 }
 
 //回调参数
