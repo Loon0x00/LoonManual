@@ -13,7 +13,7 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128
 ## GEOIP
 根据mmdb查询的IP国家地区进行匹配
 ```
-geoip,cn,DIECT
+geoip,cn,DIRECT
 ```
 
 ## IP-ASN
