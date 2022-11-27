@@ -4,10 +4,13 @@
 * 节点（代理服务器）
     * [节点](cn/node.md)
     * [筛选节点](cn/nodefilter.md)
-* 规则
-    * [规则](cn/rule.md)
-* 策略
-    * [策略](cn/policy.md)
+* [规则](cn/rule.md)
+    * [域名类型规则](cn/domain_rule.md)
+    * [IP类型规则](cn/ip_rule.md)
+    * [HTTP类型规则](cn/http_rule.md)
+    * [Final](cn/final_rule.md)
+    * [订阅规则](cn/sub_rule.md)
+* [策略](cn/policy.md)
     * [策略组](cn/policygroup.md)
 * [复写](cn/rewrite.md)
 * 脚本
