@@ -1,8 +1,10 @@
 <!-- docs/_sidebar.md -->
 
 * [快速开始](cn/guide.md)
-* [节点](cn/node.md)
-* [规则](cn/rule.md)
+* 节点（代理服务器）
+    * [节点](cn/node.md)
+* 规则
+    * [规则](cn/rule.md)
 * 策略
     * [策略](cn/policy.md)
     * [策略组](cn/policygroup.md)
