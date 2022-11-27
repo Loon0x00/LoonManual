@@ -90,7 +90,7 @@
 ## 本地存储
 - **$persistentStore**
 
-`$persistentStore.read(value,[key])`: 将value以key为键存储在本地，value和key类型都为字符串，key不传时为当前脚本名字的hash值，存储成功后返回true，失败返回false
+`$persistentStore.write(value,[key])`: 将value以key为键存储在本地，value和key类型都为字符串，key不传时为当前脚本名字的hash值，存储成功后返回true，失败返回false
 
 `$persistentStore.read([key])`: 读取保存在本地中key映射的值，key不传时为当前脚本名字的hash值，返回相应的value，key和value都为字符串
 
@@ -158,7 +158,7 @@ data: String类型，响应body
 
 - **$done()**
 
-在一般的脚本中，调用$done()表示结束脚本的执行，loon内部会进行脚本资源的释放，所以为了loon的js资源请在脚本结束时调用$done()释放资源；在http-request、http-response类型的脚本中，$done()的调用请参考相关脚本类型的说明：[Loon脚本类型](../cn/script.md)
+在一般的脚本中，调用$done()表示结束脚本的执行，loon内部会进行脚本资源的释放，所以为了loon的js资源请在脚本结束时调用$done()释放资源；在http-request、http-response类型的脚本中，$done()的调用请参考相关脚本类型的说明：[Loon脚本类型](cn/script.md)
 
 - **$envirnoment**
 

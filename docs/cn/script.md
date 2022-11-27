@@ -12,7 +12,7 @@ http-request ^https?:\/\/(www.)?(example)\.com script-path=localscript.js,tag = 
 ```
 此类脚本中可以使用如下变量
 
-- 所有[Script API](../cn/script_api.md)
+- 所有[Script API](cn/script_api.md)
 - `$request`: 一个http请求信息
     - `$request.url`: String类型，请求URL
     - `$request.method`: String类型，请求方法
@@ -41,7 +41,7 @@ http-request ^https?:\/\/(www.)?(example)\.com script-path=localscript.js,tag = 
 http-response ^https?:\/\/(www.)?(example)\.com script-path=https://example.com/loon.js,timeout=10,requires-body = true,tag = responseScript,enable=true
 ```
 此类脚本中可以使用如下变量
-- 所有[Script API](../cn/script_api.md)
+- 所有[Script API](cn/script_api.md)
 - `$request`: http请求信息
     - `$request.url`: String类型，请求URL
     - `$request.method`: String类型，请求方法
@@ -70,7 +70,7 @@ http-response ^https?:\/\/(www.)?(example)\.com script-path=https://example.com/
 cron "0 8 * * *" script-path=cron.js,tag = responseScript,enable=true
 ```
 此类脚本中可以使用如下变量
-- 所有[Script API](../cn/script_api.md)
+- 所有[Script API](cn/script_api.md)
 
 ## network-changed
 当网络环境发生变化时会调用此类型脚本，如果有多个这种类型的脚本，只会调用配置文件中的第一个
@@ -79,7 +79,7 @@ cron "0 8 * * *" script-path=cron.js,tag = responseScript,enable=true
 network-changed script-path=https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Script/netChanged.js, tag=changeModel,enable=true
 ```
 此类脚本中可以使用如下变量
-- 所有[Script API](../cn/script_api.md)
+- 所有[Script API](cn/script_api.md)
 
 ## generic
 以节点、策略组、规则等配置为参数的脚本，需要在app内部页面手动进行触发，不会主动触发
@@ -88,4 +88,4 @@ network-changed script-path=https://raw.githubusercontent.com/Loon0x00/LoonExamp
 generic script-path=https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Script/generic_example.js,tag=GeoLocation,timeout=10,img-url=location.fill.viewfinder.system
 ```
 此类脚本中可以使用如下变量
-- 所有[Script API](../cn/script_api.md)
+- 所有[Script API](cn/script_api.md)
