@@ -12,7 +12,7 @@
 * [策略](cn/policy.md)
     * [策略组](cn/policygroup.md)
 * [复写](cn/rewrite.md)
-* 脚本
+* [脚本](cn/s.md)
     * [脚本类型](cn/script.md)
     * [脚本API](cn/script_api.md)
 * [插件](cn/plugin.md)

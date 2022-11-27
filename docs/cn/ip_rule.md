@@ -19,7 +19,7 @@ geoip,cn,DIECT
 ## IP-ASN
 根据IP服务商进行匹配
 ```
-"IP-ASN,4134,DIRECT,no-resolve
+IP-ASN,4134,DIRECT,no-resolve
 ```
 
 **no-resolve 可选**: 当设置no-resolve后表示该规则只会对目标地址类型是IP类型的生效，域名类型的目标地址进行dns解析后再去匹配这个规则
