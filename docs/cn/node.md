@@ -33,6 +33,7 @@ Subscription-Userinfo:upload=1111;download=111;total=123456;expire=1614527045
 同时，Loon也支持使用JavaScript进行自定义代理协议，可参考[使用JS自定义HTTP代理](https://github.com/Loon0x00/LoonExampleConfig/blob/master/Script/http.js)
 
 ## 节点格式
+如果要在配置文件中手动添加、修改单个节点，请遵从下面的格式
 ```
 #ss
 # 节点名称 = 协议，服务器地址，端口，加密方式，密码，fast-open=是否开启fast open（需要节点支持），udp=是否在UDP中使用（需要节点支持）
@@ -127,7 +128,7 @@ trojan2 = trojan,example.com,443,"password",transport=ws,path=/,host=micsoft.com
 jsHTTP = custom,192.168.1.139,6152,script-path=http.js
 ```
 
-Loon可以解析大部分服务提供商所提供的订阅节点，如遇到不支持的情况可以使用节点订阅解析脚本进行解析，目前常用的解析脚本有[SubStore](https://github.com/sub-store-org)提供，可在配置文件的general模块下进行如下配置，在之后的添加订阅节点页面开启解析器即可。
+除了可以解析官方定义的节点格式，Loon也可以解析大部分服务提供商所提供的订阅节点，如遇到不支持的情况可以使用节点订阅解析脚本进行解析，目前常用的解析脚本由[SubStore](https://github.com/sub-store-org)提供，可在配置文件的general模块下进行如下配置，在之后的添加订阅节点页面开启解析器即可。
 ```
 resource-parser = https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/dist/sub-store-parser.loon.min.js
 ```

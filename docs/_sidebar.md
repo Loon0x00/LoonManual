@@ -3,6 +3,7 @@
 * [快速开始](cn/guide.md)
 * 节点（代理服务器）
     * [节点](cn/node.md)
+    * [筛选节点](cn/nodefilter.md)
 * 规则
     * [规则](cn/rule.md)
 * 策略
