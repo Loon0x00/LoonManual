@@ -17,8 +17,5 @@
 * [插件](cn/plugin.md)
 * [DNS](cn/dns.md)
     * [Host Map](cn/hostmap.md)
-<!-- * 其他 -->
-<!-- * 隐私条款
-    * [隐私](cn/privacy.md)
-    * [条款](cn/terms.md) -->
+* [隐私条款](cn/privacy.md)
 * [Release Note](cn/release.md)
