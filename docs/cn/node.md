@@ -24,6 +24,9 @@ Subscription-Userinfo:upload=1111;download=111;total=123456;expire=1614527045
     - VMESS + WebSocket + TLS
     - VMESS + HTTP
     - VMESS + HTTP + TLS
+- VLESS
+    - VLESS + WebSocket
+    - VLESS + HTTP
 - Trojan
     - Trojan + WebSocket
     - Trojan + HTTP
