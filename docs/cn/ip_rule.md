@@ -22,4 +22,4 @@ geoip,cn,DIRECT
 IP-ASN,4134,DIRECT,no-resolve
 ```
 
-**no-resolve 可选**: 当设置no-resolve后表示该规则只会对目标地址类型是IP类型的生效，域名类型的目标地址进行dns解析后再去匹配这个规则
+**no-resolve 可选**: 当设置no-resolve后表示该规则只会对目标地址类型是IP类型的生效，域名类型的目标地址不会进行dns解析后再去匹配这个规则，为了防止域名类的目标地址做无效的DNS请求，请在给纯IP类型的域名制定的规则中加上no-resolve。

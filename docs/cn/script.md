@@ -4,7 +4,7 @@
 在获得一个http请求时触发，可配置的参数：
 - `requires-body = true`代表是否获取http请求的body
 - `binary-body-mode = true`代表获取http请求的body类型为Uint8Array
-- `argument = name=loon&version=2.1.0`脚本中可以通过变量`$argument`获取
+- `argument = "name=loon&version=2.1.0"`脚本中可以通过变量`$argument`获取，**为了能够准确解析到参数，请将参数用双引号包裹**
 
 ### 配置语法
 ```
@@ -34,7 +34,7 @@ http-request ^https?:\/\/(www.)?(example)\.com script-path=localscript.js,tag = 
 在获得一个http响应时触发，参数`requires-body = true`代表是否获取http响应的body
 - `requires-body = true`代表是否获取http请求的body
 - `binary-body-mode = true`代表获取http请求的body类型为Uint8Array
-- `argument = name=loon&version=2.1.0`脚本中可以通过变量`$argument`获取
+- `argument = "name=loon&version=2.1.0"`脚本中可以通过变量`$argument`获取，**为了能够准确解析到参数，请将参数用双引号包裹**
 
 ### 配置语法
 ```
