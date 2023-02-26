@@ -28,7 +28,10 @@ dns-server =
 ```
 
 ## 插件中规则的策略
-策略可设置为DIRECT,REJECT,PROXY，其中PROXY为用户在app中手动映射的策略，rule后不跟随策略默认使用PROXY
+插件内的规则指向的策略只能有如下三种，当规则不指定策略时，会默认使用DIRECT
+1. DIRECT
+2. REJECT类（REJECT，REJECT-IMG，REJECT-DICT，REJECT-ARRY，REJECT-DROP）
+3. PROXY，此代表用户在进行插件配置时手动选择的策略组，如果用户指定了PROXY，但插件却没有进行配置，~~那将最终按照无法找到策略组的逻辑进行处理~~ 那将最终指向Final策略
 
 ## 插件推荐
 [Loon 插件仓库](https://github.com/Peng-YM/Loon-Gallery)
