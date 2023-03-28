@@ -17,5 +17,7 @@
 * [插件](cn/plugin.md)
 * [DNS](cn/dns.md)
     * [Host Map](cn/hostmap.md)
+* [其他配置](cn/general.md)
+* [Scheme](cn/scheme.md)
 * [隐私条款](cn/privacy.md)
 * [Release Note](cn/release.md)

@@ -22,8 +22,7 @@ http-request ^https?:\/\/(www.)?(example)\.com script-path=localscript.js,tag = 
 - `$done()`方法参数说明：
     - `$done()`: 不传任何参数，表示放弃该请求，请求连接会直接断开
     - `$done({})`: 空js对象，请求继续，任何请求参数不会有任何变化
-    - `$done({url:"https://new.example.com/"})`: 替换原来的url
-    - `$done({headers:{}})`: 替换原来的request headers
+    - `$done({url:"https://new.example.com/",headers:{},node:HK})`: url参数替换原来的url，headers替换原来的request headers，node参数表示该请求后续用指定的策略组（也可以是节点名称）进行请求（build 534版本开始适用）
     - `$done({response:{
         status:200,
         headers:{},
