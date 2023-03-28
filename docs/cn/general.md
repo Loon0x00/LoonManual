@@ -91,11 +91,12 @@ real-ip = *.apple.com,*.icloud.com
 interface-mode = Performace
 ```
 
+
 ## force-http-engine-hosts
 有些app使用原始的tcp来进行http请求，这些流量就会走TUN，为了性能考虑，Loon默认只会解析80端口的这些http请求，如果一些请求的端口不是80，则可以在这里指定相关的域名或者端口，从而让Loon对这些http请求进行解析
 ```
-// :8080，表示解析所有8080端口，0表示解析所有端口
-// 通配符域名，解析所有端口下的相关域名
+# :8080，表示解析所有8080端口，0表示解析所有端口
+# 通配符域名，解析所有端口下的相关域名
 force-http-engine-hosts = *.baid.com,:8080
 ```
 ## disable-udp-ports
