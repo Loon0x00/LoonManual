@@ -22,7 +22,7 @@ http-request ^https?:\/\/(www.)?(example)\.com script-path=localscript.js,tag = 
 - `$done()`方法参数说明：
     - `$done()`: 不传任何参数，表示放弃该请求，请求连接会直接断开
     - `$done({})`: 空js对象，请求继续，任何请求参数不会有任何变化
-    - `$done({url:"https://new.example.com/",headers:{},node:HK})`: url参数替换原来的url，headers替换原来的request headers，node参数表示该请求后续用指定的策略组（也可以是节点名称）进行请求（build 534版本开始适用）
+    - `$done({url:"https://new.example.com/",headers:{},node:"HK"})`: url参数替换原来的url，headers替换原来的request headers，node参数表示该请求后续用指定的策略组（也可以是节点名称）进行请求（build 534版本开始适用）
     - `$done({response:{
         status:200,
         headers:{},
@@ -53,11 +53,11 @@ http-response ^https?:\/\/(www.)?(example)\.com script-path=https://example.com/
 - `$done()`方法参数说明：
     - `$done()`: 不传任何参数，表示放弃该请求，请求连接会直接断开
     - `$done({})`: 空js对象，请求继续，任何请求参数不会有任何变化
-    - `$done({response:{
+    - `$done({
         status:200,
         headers:{},
         body:""
-    }})`: 直接向该请求返回一个假的响应，body类型可以是String或者Uint8Array，**如果body的长度大于0，会自动计算headers中的content-length，content-encoding也会根据body类型自动生成**
+    })`: 直接向该请求返回一个假的响应，body类型可以是String或者Uint8Array，**如果body的长度大于0，会自动计算headers中的content-length，content-encoding也会根据body类型自动生成**
 
 ## cron
 - 根据设定的cron表达式定时触发脚本
