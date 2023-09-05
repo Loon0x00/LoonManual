@@ -125,8 +125,10 @@ $notification.post("title","subtitle","content",attach)
     headers:{
         Content-Type:"application/json"
     },
-    body:"{}",//仅仅在post请求中有效
+    body:"{}",//仅仅在post请求中有效，格式可以是一个json对象、字符串、二进制等
+    body-base64:true,//当有该字段时，会将body当做base64的格式解析成二进制，如果body参数不是base64后的二进制，请不要设定该值（build 612版本后有效）
     node:"HK - v1.0",//指定该请求使用哪一个节点或者策略组（可以使节点名称、策略组名称，也可以说是一个Loon格式的节点描述，如：node:"shadowsocksr,example.com,1070,chacha20-ietf,"password",protocol=auth_aes128_sha1,protocol-param=test,obfs=plain,obfs-param=edge.microsoft.com"）
+    binary-mode:true,//请求响应返回二进制格式
 }
 
 //回调参数
