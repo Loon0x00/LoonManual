@@ -28,7 +28,7 @@ http-request ^https?:\/\/(www.)?(example)\.com script-path=localscript.js,tag = 
         headers:{},
         body:""
     }})`: 直接向该请求返回一个假的响应，body类型可以是String或者Uint8Array，**如果body的长度大于0，会自动计算headers中的content-length，content-encoding也会根据body类型自动生成**
-    **注意** 当$done()参数的对象中的response不包含headers或者body时，表示使用原请求的headers和body，如果要清除原请求的body时，参数的`body=""`即可，清除原headers的话`headers={}`
+    **注意** 当$done()参数的对象中的request不包含headers或者body时，表示使用原请求的headers和body，如果要清除原请求的body时，参数的`body=""`即可，清除原headers的话`headers={}`
 
 ## http-response
 在获得一个http响应时触发，参数`requires-body = true`代表是否获取http响应的body
@@ -59,7 +59,7 @@ http-response ^https?:\/\/(www.)?(example)\.com script-path=https://example.com/
         headers:{},
         body:""
     })`: 直接向该请求返回一个假的响应，body类型可以是String或者Uint8Array，**如果body的长度大于0，会自动计算headers中的content-length，content-encoding也会根据body类型自动生成**
-    **注意** 当$done()参数的对象中的request不包含headers或者body时，表示使用原请求的headers和body，如果要清除原请求的body时，参数的`body=""`即可，清除原headers的话`headers={}`
+    **注意** 当$done()参数的对象中的response不包含headers或者body时，表示使用原响应的headers和body，如果要清除原请求的body时，参数的`body=""`即可，清除原headers的话`headers={}`
 
 ## cron
 - 根据设定的cron表达式定时触发脚本
