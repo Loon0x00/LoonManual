@@ -33,6 +33,8 @@ Subscription-Userinfo:upload=1111;download=111;total=123456;expire=1614527045
 - HTTP
 - HTTPS
 - Wireguard
+- Hysteria2
+- Custom by JS
 
 同时，Loon也支持使用JavaScript进行自定义代理协议，可参考[使用JS自定义HTTP代理](https://github.com/Loon0x00/LoonExampleConfig/blob/master/Script/http.js)
 
