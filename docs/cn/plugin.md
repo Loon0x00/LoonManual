@@ -34,4 +34,4 @@ dns-server =
 3. PROXY，代表用户在进行插件配置时手动选择的策略组，如果用户指定了PROXY，但插件却没有进行配置，那最终将按照无法找到策略组的逻辑进行处理（即使用App全局中第一个节点）
 
 ## 插件推荐
-[Loon 插件仓库](https://github.com/Peng-YM/Loon-Gallery)
+[Loon 插件仓库](https://github.com/Peng-YM/Loon-Gallery)(由热心网友整理提供)
