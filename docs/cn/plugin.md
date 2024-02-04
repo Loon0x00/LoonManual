@@ -4,10 +4,16 @@
 ## 插件可包含的配置模块
 ```
 #!name= 插件名称
-#!desc= 插件详细功能描述
+#!desc= 这是一个带有配置项的插件，input代表输入，select代表选择（select的第一项为名称，后面为可选值），用户所填或者选择的值都可以在脚本中用$persistentStore.read进行读取，如$persistentStore.read(appName)
 #!author= 插件作者
 #!homepage= 插件首页，可在插件页面进行跳转
 #!icon= 插件的图标
+#!author = Loon0x00
+#!input = appName
+#!input = author
+#!select = appType,tool,social,health,sport
+#!select = price,0.99,1.99,4.99
+
 
 [General]
 bypass-tun =

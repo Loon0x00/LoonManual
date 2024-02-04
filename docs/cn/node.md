@@ -133,8 +133,8 @@ trojan2 = trojan,example.com,443,"password",transport=ws,path=/,host=micsoft.com
 wireguardNode = wireguard,interface-ip=192.168.2.2,interface-ipV6=2402:4e00:1200:ed00:0:9089:6dac:96b6,private-key="qF22B3ezOhWGJA4SHwQSsgMa9d6mPGHyFdZMaDTae2E=",mtu=1280,dns=192.168.2.1,dnsV6=2402:4e00:1200:ed00:0:9089:6dac:96b6,keeyalive=45,peers=[{public-key="JFuTIJEcFnt8R04UnAE5o2WfIPJUsumSxsD2ayXzoWY=",preshared-key="yVNv5K05AwVnWaR4OB8BlMX3jJlkS74aKlYC3PD95IE=",reserved=[1,2,3],allowed-ips="0.0.0.0/0",endpoint=192.168.3.17:51820}]
 
 #Hysteria2
-# 节点名称 = 协议，服务器地址，端口，密码，skip-cert-verify=是否跳过证书校验（默认否），tls-name=SNI，udp=是否在UDP中使用（需要节点支持）
-hysteria2Node = Hysteria2,example.com,9898,"password",skip-cert-verify=true,tls-name=example.com,udp=true
+# 节点名称 = 协议，服务器地址，端口，密码，skip-cert-verify=是否跳过证书校验（默认否），tls-name=SNI，udp=是否在UDP中使用（需要节点支持），fast-open=是否开启fast open
+hysteria2Node = Hysteria2,example.com,9898,"password",skip-cert-verify=true,tls-name=example.com,udp=true,fast-open=true
 
 #js custom
 # 节点名称 = 协议，服务器地址，端口，script-path=脚本路径（本地脚本直接为文件名，远端脚本为url）
