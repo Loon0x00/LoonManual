@@ -1,16 +1,5 @@
 # Script API
 
-## 工具
-- **console.log(msg))**
-
-打印日志，参数msg:String
-
-- **setInterval(function, milliseconds)**
-- **setTimeout(function, milliseconds)**
-
-延迟执行，两个方法的使用方式和参数与浏览器中一致
-
-
 ## 基本信息
 - **$loon**
 

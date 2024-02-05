@@ -8,9 +8,9 @@
 
 ### 配置语法
 ```
-http-request ^https?:\/\/(www.)?(example)\.com script-path=localscript.js,tag = requestScript,enable=true,requires-body = true
+http-request ^https?:\/\/(www.)?(example)\.com script-path=localscript.js,tag = requestScript,requires-body = true,timeout = 10,binary-body-mode = false,argument = "1234",enable=true
 ```
-此类脚本中可以使用如下变量
+脚本默认执行超时时间10s，此类脚本中可以使用如下变量，
 
 - 所有[Script API](cn/script_api.md)
 - `$request`: 一个http请求信息
@@ -38,9 +38,9 @@ http-request ^https?:\/\/(www.)?(example)\.com script-path=localscript.js,tag = 
 
 ### 配置语法
 ```
-http-response ^https?:\/\/(www.)?(example)\.com script-path=https://example.com/loon.js,timeout=10,requires-body = true,tag = responseScript,enable=true
+http-response ^https?:\/\/(www.)?(example)\.com script-path=https://example.com/loon.js,timeout=10,requires-body = true,tag = responseScript,enable=true,timeout = 10,binary-body-mode = false,argument = "1234",enable=true
 ```
-此类脚本中可以使用如下变量
+脚本默认执行超时时间10s，此类脚本中可以使用如下变量：
 - 所有[Script API](cn/script_api.md)
 - `$request`: http请求信息
     - `$request.url`: String类型，请求URL
@@ -68,25 +68,25 @@ http-response ^https?:\/\/(www.)?(example)\.com script-path=https://example.com/
 
 ### 配置语法
 ```
-cron "0 8 * * *" script-path=cron.js,tag = responseScript,enable=true
+cron "0 8 * * *" script-path=cron.js,tag = cronScript,enable=true,timeout = 300,argument = "1234",enable=true
 ```
-此类脚本中可以使用如下变量
+脚本默认执行超时时间200s，此类脚本中可以使用如下变量：
 - 所有[Script API](cn/script_api.md)
 
 ## network-changed
 当网络环境发生变化时会调用此类型脚本，如果有多个这种类型的脚本，只会调用配置文件中的第一个
 ### 配置语法
 ```
-network-changed script-path=https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Script/netChanged.js, tag=changeModel,enable=true
+network-changed script-path=https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Script/netChanged.js,tag=changeModel,timeout = 300,argument = "1234",enable=true
 ```
-此类脚本中可以使用如下变量
+脚本默认执行超时时间200s，此类脚本中可以使用如下变量：
 - 所有[Script API](cn/script_api.md)
 
 ## generic
 以节点、策略组、规则等配置为参数的脚本，需要在app内部页面手动进行触发，不会主动触发
 ### 配置语法
 ```
-generic script-path=https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Script/generic_example.js,tag=GeoLocation,timeout=10,img-url=location.fill.viewfinder.system
+generic script-path=https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Script/generic_example.js,tag=GeoLocation,timeout=10,img-url=location.fill.viewfinder.system,timeout = 300,argument = "1234",enable=true
 ```
 此类脚本中可以使用如下变量
 - 所有[Script API](cn/script_api.md)
