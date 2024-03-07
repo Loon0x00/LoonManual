@@ -1,8 +1,8 @@
 # 端口规则
 根据请求的源端口或者目标端口进行匹配（3.1.7+）
-- 表示特定的某个端口，如DEST-PORT,443,DIRECT
-- 表示端口闭区间，如DEST-PORT,80-443,DIRECT
-- 使用>, <, <=, >= 表示一个无穷区间，如：DEST-PORT,>=443,DIRECT
+- 表示特定的某个端口，如`DEST-PORT,443,DIRECT`
+- 表示端口闭区间，如`DEST-PORT,80-443,DIRECT`
+- 使用>, <, <=, >= 表示一个无穷区间，如`DEST-PORT,>=443,DIRECT`
 
 ## SCR-PORT
 ```
@@ -19,7 +19,7 @@ DEST-PORT,>=443,DIRECT
 ```
 
 # 协议类规则
-根据请求的协议类型进行匹配（3.1.7+），目前支持HTTP/HTTPS/TCP/QUIC/STUN/UDP
+根据请求的协议类型进行匹配（3.1.7+），目前支持`HTTP/HTTPS/TCP/QUIC/STUN/UDP`
 
 
 ## PROTOCOL
