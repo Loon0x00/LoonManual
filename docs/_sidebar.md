@@ -7,6 +7,7 @@
     * [IP类型规则](cn/ip_rule.md)
     * [HTTP类型规则](cn/http_rule.md)
     * [端口和协议类型规则](cn/port_protocol_rule.md)
+    * [逻辑规则](cn/logic_rule.md)
     * [Final](cn/final_rule.md)
     * [订阅规则](cn/sub_rule.md)
 * [策略](cn/policy.md)
