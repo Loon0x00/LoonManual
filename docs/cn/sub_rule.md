@@ -5,7 +5,7 @@ https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Rule/Example
 ```
 
 ## 查询性能
-Loon目前可以承载百万级别数量的规则，无须担心性能和耗时问题。
+Loon目前可以承载百万级别数量的规则，无须担心性能和耗时问题。同时也会采用LRU算法缓存近期的结果，命中结果的时间损耗接近为0ms。
 
 目前测试情况如下：（3.1.7 build 669 iPhone15 Pro）
 - 10万+ DOMAIN类型的规则查询时间：5ms内
