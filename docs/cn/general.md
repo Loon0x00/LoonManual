@@ -56,6 +56,11 @@ wifi-access-socks5-port = 8898
 ```
 proxy-test-url = http://cp.cloudflare.com/generate_204
 ```
+## internet-test-url
+检测网络可用性时的链接，一般填写可以直连访问的链接
+```
+internet-test-url = http://wifi.vivo.com.cn/generate_204
+```
 ## test-timeout
 节点测速时的超时秒数
 ```
